@@ -1,0 +1,28 @@
+version: "3.9"
+
+services:
+  websphere:
+    build: .
+    ports:
+      - "9043:9043"
+      - "9443:9443"
+      - "7777:7777"
+    volumes:
+      - ./was-conf/WAS_PASSWORD:/tmp/PASSWORD
+      - ./mount:/work/mount
+    depends_on:
+      - oracle
+  oracle:
+    image: gvenzl/oracle-xe:21.3.0-slim
+    ports:
+      - "1521:1521"
+    environment:
+      - ORACLE_PASSWORD=ORACLE
+      - APP_USER=DEMO
+      - APP_USER_PASSWORD=DEMO
+    volumes:
+      - db_data:/opt/oracle/oradata
+      - ./mount/sql:/container-entrypoint-initdb.d
+
+volumes:
+  db_data: {}

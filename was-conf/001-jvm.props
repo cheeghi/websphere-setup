@@ -1,0 +1,11 @@
+ResourceType=JavaVirtualMachine
+ImplementingResourceType=Server
+ResourceId=Cell=DefaultCell01:Node=DefaultNode01:Server=server1:JavaProcessDef=:JavaVirtualMachine=
+AttributeInfo=jvmEntries
+
+#
+#Properties
+#
+initialHeapSize=128
+maximumHeapSize=256
+debugMode=true

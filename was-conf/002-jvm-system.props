@@ -1,0 +1,9 @@
+ResourceType=JavaVirtualMachine
+ImplementingResourceType=Server
+ResourceId=Cell=DefaultCell01:Node=DefaultNode01:Server=server1:JavaProcessDef=:JavaVirtualMachine=
+AttributeInfo=systemProperties(name,value)
+
+#
+#Properties
+#
+#openjpa.jdbc.SynchronizeMappings=buildSchema
